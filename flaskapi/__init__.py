@@ -9,7 +9,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///sqlitedb.file"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///sqlitedb.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = 0
 db = SQLAlchemy(app)
 
