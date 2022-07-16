@@ -1,7 +1,7 @@
 from flask import request, jsonify
 from flaskapi import app, db
 from flaskapi.models import User, BlogPost
-import linked_list
+from flaskapi import linked_list
 
 
 

@@ -1,6 +1,7 @@
 from flaskapi import db
 from datetime import datetime
 
+
 now = datetime.now()
 
 #models
@@ -20,3 +21,7 @@ class BlogPost(db.Model):
     body = db.Column(db.String(200))
     date = db.Column(db.Date)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable = False)
+
+
+
+

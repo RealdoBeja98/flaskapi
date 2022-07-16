@@ -1,10 +1,11 @@
-import pretty_errors
 from flask import Flask
 
 from sqlite3 import Connection as SQLite3Connection
 from sqlalchemy import event
 from sqlalchemy.engine import Engine
 from flask_sqlalchemy import SQLAlchemy
+from faker import Faker
+from random import randrange
 
 
 app = Flask(__name__)
@@ -21,4 +22,3 @@ def _set_sqlite_pragma(dbapi_connection, connection_record):
         cursor.execute("PRAGMA foreign_keys=ON;")
         cursor.close()
         
-from flaskapi import routes

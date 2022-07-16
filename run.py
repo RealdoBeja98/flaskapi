@@ -1,4 +1,6 @@
 from flaskapi import app
+import pretty_errors
+
 
 
 

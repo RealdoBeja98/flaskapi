@@ -1,33 +1,15 @@
+from flask import Flask
+import pretty_errors
 from random import randrange
-
-from sqlite3 import Connection as SQLite3Connection
 from datetime import datetime
 from faker import Faker
-from sqlalchemy import event
-from sqlalchemy.engine import Engine
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+
+from flaskapi import app 
 from flaskapi import db
-from models import User, BlogPost
-
-""" # app
-app = Flask(__name__)
-
-# config
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///sqlitedb.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = 0
-
-# configure sqlite3 to enforce foreign key contraints
-@event.listens_for(Engine, "connect")
-def _set_sqlite_pragma(dbapi_connection, connection_record):
-    if isinstance(dbapi_connection, SQLite3Connection):
-        cursor = dbapi_connection.cursor()
-        cursor.execute("PRAGMA foreign_keys=ON;")
-        cursor.close()
+from flaskapi.models import User, BlogPost
 
 
-db = SQLAlchemy(app)
-now = datetime.now() """
+
 
 faker = Faker()
 
