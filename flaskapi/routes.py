@@ -12,7 +12,7 @@ def create_user() :
         name = data["name"],
         email = data["email"],
         address = data["address"],
-        phone = data["phone"],
+        phone = data["phone"]
     )
     db.session.add(new_user)
     db.session.commit()
@@ -30,10 +30,11 @@ def get_all_users_descending() :
                 "name" : user.name,
                 "email" : user.email,
                 "address" : user.address,
-                "phone" : user.phone,
+                "phone" : user.phone
             }
         )
-        return jsonify(all_users_ll.to_list), 200
+    
+    return jsonify(all_users_ll.to_list()), 200
 
 @app.route("/user/ascending_id", methods = ["GET"])
 def get_all_users_ascending() :
