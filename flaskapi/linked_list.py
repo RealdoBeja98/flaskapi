@@ -7,7 +7,15 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.last_node = None
-        
+
+    def get_user_by_id(self, user_id):
+        node = self.head
+        while node:
+            if node.data["id"] is user_id:
+                return node.data
+            node = node.next_node
+        return None
+
     def to_list(self):
         list = []
         if self.head is None:
